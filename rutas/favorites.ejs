@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros Favoritos</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Libros Favoritos</h1>
+    
+    <div id="favorite-books">
+        <% favoriteBooks.forEach(book => { %>
+            <div class="book">
+                <h3><%= book.title %></h3>
+                <p>Autor: <%= book.author %></p>
+                <p>Género: <%= book.genre %></p>
+                <p><%= book.synopsis %></p>
+                <a href="/book/<%= book.id %>">Ver Detalles</a>
+                <button onclick="removeFromFavorites('<%= book.id %>')">Eliminar de Favoritos</button>
+            </div>
+        <% }); %>
+    </div>
+
+    <script src="/scripts.js"></script>
+</body>
+</html>

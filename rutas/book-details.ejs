@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Libro</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Detalles del Libro</h1>
+    
+    <div class="book-details">
+        <h2><%= book.title %></h2>
+        <p>Autor: <%= book.author %></p>
+        <p>Género: <%= book.genre %></p>
+        <p><%= book.synopsis %></p>
+        <!-- Botón para agregar a favoritos -->
+        <button onclick="addToFavorites('<%= book.id %>')">Agregar a Favoritos</button>
+    </div>
+
+    <script src="/scripts.js"></script>
+</body>
+</html>

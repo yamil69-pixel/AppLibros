@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Libros</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Buscar Libros</h1>
+    
+    <form action="/search" method="GET">
+        <input type="text" name="q" placeholder="Buscar por título, autor, género, etc.">
+        <button type="submit">Buscar</button>
+    </form>
+
+    <!-- Resultados de la búsqueda -->
+    <h2>Resultados de la Búsqueda</h2>
+    <div id="search-results">
+        <% results.forEach(book => { %>
+            <div class="book">
+                <h3><%= book.title %></h3>
+                <p>Autor: <%= book.author %></p>
+                <p>Género: <%= book.genre %></p>
+                <p><%= book.synopsis %></p>
+                <a href="/book/<%= book.id %>">Ver Detalles</a>
+            </div>
+        <% }); %>
+    </div>
+
+    <script src="/scripts.js"></script>
+</body>
+</html>
