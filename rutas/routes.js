@@ -14,7 +14,7 @@ const connection = mysql.createConnection({
 // Conectar y crear tablas si no existen
 connection.connect((error) => {
     if (error) throw error;
-    console.log('Conexión exitosa');
+    console.log('Conexión establecida con éxito');
 
     // Script para crear las tablas
     const createTableUsers = `CREATE TABLE IF NOT EXISTS users (
@@ -44,16 +44,16 @@ connection.connect((error) => {
 
     connection.query(createTableUsers, (error, result) => {
         if (error) throw error;
-        console.log('Tabla users creada o ya existente');
+        console.log('Tabla de usuarios creada o ya existente');
     });
 
     connection.query(createTableBooks, (error, result) => {
         if (error) throw error;
-        console.log('Tabla books creada o ya existente');
+        console.log('Tabla de libros creada o ya existente');
     });
     connection.query(createTableUserFavoriteBooks, (error, result) => {
         if (error) throw error;
-        console.log('Tabla usersFavoriteBooks creada o ya existente');
+        console.log('Tabla de libros favoritos de usuarios creada o ya existente');
     });
 });
 
